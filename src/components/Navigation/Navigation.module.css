@@ -1,0 +1,15 @@
+.link {
+  display: inline-flex;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: rgb(35, 73, 188);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.active {
+  color: #fff;
+}
