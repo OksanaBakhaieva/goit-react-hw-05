@@ -32,27 +32,27 @@ const options = {
   },
 };
 
-export const getMovie = async () => {
+export const apiMovies = async () => {
   const response = await axios.get("/trending/movie/day?${params}");
   return response.data;
 };
 
-export const getMovieById = async (movieId) => {
+export const apiMoviesById = async (movieId) => {
   const response = await axios.get(`/movie/${movieId}${params}`);
   return response.data;
 };
 
-export const getMovieCast = async (movieId) => {
+export const apiMovieCast = async (movieId) => {
   const response = await axios.get(`/movie/${movieId}/credits?${params}`);
   return response.data;
 };
 
-export const getMovieReviews = async (movieId) => {
+export const apiMovieReviews = async (movieId) => {
   const response = await axios.get(`/movie/${movieId}/reviews?${params}`);
   return response.data;
 };
 
-export const getMovieByQuery = async (query) => {
+export const apiMoviesByQuery = async (query) => {
   const response = await axios.get(`search/movie?query=${query}&${params}`);
   return response.data;
 };

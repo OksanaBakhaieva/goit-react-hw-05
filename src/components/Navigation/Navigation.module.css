@@ -1,15 +1,24 @@
 .link {
-  display: inline-flex;
-  padding: 8px;
+  display: flex;
+  padding: 10px 20px;
   text-decoration: none;
+  color: #fff;
+  background-color: #06a3f8;
+  border: 1px solid #0445fa;
+  border-radius: 8px;
+  transition: all 0.3s;
 }
 
 .link:hover {
-  color: rgb(35, 73, 188);
+  color: #2330bc;
+  background-color: #363956;
+  border: 1px solid #2330bc;
   text-decoration: underline;
   cursor: pointer;
 }
 
 .active {
   color: #fff;
+  background-color: #363956;
+  border: 1px solid #2330bc;
 }

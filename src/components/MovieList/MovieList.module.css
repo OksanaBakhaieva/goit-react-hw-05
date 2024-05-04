@@ -1,0 +1,31 @@
+.listMovies {
+  display: block;
+  gap: 10px;
+  font-size: 16px;
+  padding-left: 30px;
+  list-style: disc;
+}
+
+.infoMessage {
+  font-size: 16px;
+  color: #0000ff;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.linkOfAllMovies {
+  color: #0000ff;
+  text-decoration: none;
+}
+
+.linkOfAllMovies:visited {
+  color: #0e0e21;
+}
+
+.linkOfAllMovies:hover {
+  color: #8e8e92;
+}
+
+.linkOfAllMovies:active {
+  color: var(--main-yellow);
+}
