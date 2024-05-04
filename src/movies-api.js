@@ -33,27 +33,27 @@ const options = {
 };
 
 export const apiMovies = async () => {
-  const response = await axios.get("/trending/movie/day?${params}");
+  const response = await axios.get(`/trending/movie/day?${params}`, options);
   return response.data;
 };
 
 export const apiMoviesById = async (movieId) => {
-  const response = await axios.get(`/movie/${movieId}${params}`);
+  const response = await axios.get(`/movie/${movieId}${params}`, options);
   return response.data;
 };
 
 export const apiMovieCast = async (movieId) => {
-  const response = await axios.get(`/movie/${movieId}/credits?${params}`);
+  const response = await axios.get(`/movie/${movieId}/credits?${params}`, options);
   return response.data;
 };
 
 export const apiMovieReviews = async (movieId) => {
-  const response = await axios.get(`/movie/${movieId}/reviews?${params}`);
+  const response = await axios.get(`/movie/${movieId}/reviews?${params}`, options);
   return response.data;
 };
 
 export const apiMoviesByQuery = async (query) => {
-  const response = await axios.get(`search/movie?query=${query}&${params}`);
+  const response = await axios.get(`search/movie?query=${query}&${params}`, options);
   return response.data;
 };
 

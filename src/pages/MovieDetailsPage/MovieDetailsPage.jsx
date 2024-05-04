@@ -84,7 +84,7 @@ export default function MovieDetailsPage () {
             </div>
 
             <div className={css.addInfo}>
-              <h3>Addition information:</h3>
+              <h3>Additional information:</h3>
               <ul className={css.addLinks}>
                 <li>
                   <NavLink className={getNavLinkClassNames} to="cast">

@@ -1,4 +1,4 @@
-.listMovies {
+.list {
   display: block;
   gap: 10px;
   font-size: 16px;
@@ -13,19 +13,16 @@
   margin-bottom: 24px;
 }
 
-.linkOfAllMovies {
+.link {
   color: #0000ff;
   text-decoration: none;
 }
 
-.linkOfAllMovies:visited {
+/* .link:visited {
   color: #0e0e21;
-}
+} */
 
-.linkOfAllMovies:hover {
+.link:hover {
   color: #8e8e92;
-}
-
-.linkOfAllMovies:active {
-  color: var(--main-yellow);
+  text-decoration: underline;
 }

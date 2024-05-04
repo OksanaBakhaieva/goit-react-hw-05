@@ -6,11 +6,11 @@ export default function MovieList({ movies = [] }) {
   return (
     <div>
       {movies.length > 0 ? (
-        <ul className={css.listMovies}>
+        <ul className={css.list}>
           {movies.map(movie => (
             <li key={movie.id}>
               <Link
-                className={css.linkOfAllMovies}
+                className={css.link}
                 state={location}
                 to={`/movies/${movie.id}`}
               >

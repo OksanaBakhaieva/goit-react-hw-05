@@ -1,4 +1,4 @@
-.mainCast {
+.container {
   margin-top: 24px;
   margin-bottom: 24px;
   padding-left: 24px;
@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.listCast {
+.list {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
@@ -16,7 +16,7 @@
   justify-content: center;
 }
 
-.castItem {
+.item {
   width: 136px;
   height: 238px;
   padding: 8px;
@@ -35,7 +35,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .castItem {
+  .item {
     width: 164px;
     font-size: 14px;
     height: 264px;
@@ -43,7 +43,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .castItem {
+  .item {
     width: 184px;
     height: 284px;
     font-size: 16px;

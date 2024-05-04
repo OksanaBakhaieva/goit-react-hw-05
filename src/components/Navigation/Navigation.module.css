@@ -1,5 +1,6 @@
 .link {
-  display: flex;
+  width: 260px;
+  margin-left: 24px;
   padding: 10px 20px;
   text-decoration: none;
   color: #fff;

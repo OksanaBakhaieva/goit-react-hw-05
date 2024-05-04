@@ -30,16 +30,16 @@ const MovieCast = () => {
   }, [movieId]);
 
   return (
-    <div className={css.mainCast}>
+    <div className={css.container}>
       {isLoading && <Loader />}
       {isError && <div>Something went wrong! Please reload this page.</div>}
       {!isLoading &&
         !isError &&
         (movieCast.length ? (
-          <ul className={css.listCast}>
+          <ul className={css.list}>
             {movieCast.map(actor => {
               return (
-                <li className={css.castItem} key={actor.id}>
+                <li className={css.item} key={actor.id}>
                   <ActorCard actor={actor} />
                 </li>
               );
