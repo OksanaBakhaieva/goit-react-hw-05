@@ -6,10 +6,10 @@ import css from './MoviesPage.module.css';
 import Loader from '../../components/Loader/Loader';
 import SearchBar from '../../components/SearchBar/SearchBar';
 
-export default function MoviesPage() {
+const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const [isError, setIsError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('query');
 
@@ -19,7 +19,6 @@ export default function MoviesPage() {
 
     async function fetchMoviesByQuery() {
       try {
-        setIsError(false);
         setIsLoading(true);
         const data = await apiMoviesByQuery(searchQuery);
         if (data.results.length === 0) {
@@ -27,7 +26,7 @@ export default function MoviesPage() {
         }
         setMovies(data.results);
       } catch (err) {
-        setIsError(true);
+        setIsError(err);
       } finally {
         setIsLoading(false);
       }
@@ -60,3 +59,5 @@ export default function MoviesPage() {
     </div>
   );
 }
+
+export default MoviesPage;

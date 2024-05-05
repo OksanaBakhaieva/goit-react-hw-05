@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { formatDate } from '../../services/getDate';
-import { getImg } from '../../services/getImg';
+import { formatDate } from '../../getInfo';
+import { getImg } from '../../getInfo';
 import { apiMovieReviews } from '../../services/apiMovies';
 import css from './MovieReviews.module.css';
-
 import Loader from '../Loader/Loader';
 
-export default function MovieReviews () {
+export const MovieReviews = () => {
   const { movieId } = useParams();
   const [movieReviews, setMovieReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

@@ -6,7 +6,7 @@ const getNavLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
 };
 
-export default function Navigation() {
+const Navigation = () => {
   return (
     <nav>
       <NavLink to="/" className={getNavLinkClass}>
@@ -18,3 +18,4 @@ export default function Navigation() {
     </nav>
   );
 }
+export default Navigation;

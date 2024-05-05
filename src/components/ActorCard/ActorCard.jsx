@@ -1,7 +1,7 @@
 import { getImg } from '../../getInfo';
 import css from './ActorCard.module.css';
 
-export default function ActorCard ({ actor }) {
+export const ActorCard = ({ actor }) => {
   return (
     <div className={css.actorCard}>
       <div>

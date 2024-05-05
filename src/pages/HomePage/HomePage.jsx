@@ -4,20 +4,19 @@ import css from './HomePage.module.css';
 import Loader from '../../components/Loader/Loader';
 import MovieList from '../../components/MovieList/MovieList';
 
-export default function HomePage() {
+const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const [isError, setIsError] = useState(null);
 
   useEffect(() => {
     async function fetchMovies() {
       try {
-        setIsError(false);
         setIsLoading(true);
         const data = await apiMovies();
         setMovies(data.results);
       } catch (err) {
-        setIsError(true);
+        setIsError(err);
       } finally {
         setIsLoading(false);
       }
@@ -42,3 +41,5 @@ export default function HomePage() {
     </div>
   );
 };
+
+export default Home;

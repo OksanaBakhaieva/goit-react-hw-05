@@ -9,7 +9,7 @@
   margin-bottom: 24px;
 }
 
-.backHome {
+.goBackBtn {
   margin-top: 50px;
   border-radius: 8px;
   padding: 12px 20px;
@@ -20,7 +20,7 @@
   transition: all 0.3s;
 }
 
-.backHome:hover {
+.goBackBtn:hover {
   color: #1601f9;
   background-color: #a0a0c1;
   border: 1px solid #74d4ec;

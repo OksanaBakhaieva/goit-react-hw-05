@@ -6,29 +6,22 @@ import { getImg } from '../../getInfo';
 import css from './MovieDetailsPage.module.css';
 import Loader from '../../components/Loader/Loader';
 
-const getNavLinkClassNames = ({ isActive }) =>
-  clsx(css.addItems, {
-    [css.active]: isActive,
-  });
-
-export default function MovieDetailsPage () {
+const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movieData, setMovieData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-
+  const [isError, setIsError] = useState(null);
   const location = useLocation();
   const backLinkRef = useRef(location.state ?? '/');
 
   useEffect(() => {
     async function fetchMoviesById() {
       try {
-        setIsError(false);
         setIsLoading(true);
         const data = await apiMoviesById(movieId);
         setMovieData(data);
       } catch (err) {
-        setIsError(true);
+        setIsError(err);
       } finally {
         setIsLoading(false);
       }
@@ -46,7 +39,6 @@ export default function MovieDetailsPage () {
     <div>
       {isLoading && <Loader />}
       {isError && <div>Something went wrong! Please reload this page.</div>}
-
       {!isLoading && !isError && (movieData ? (
           <div>
             <Link className={css.goBackBtn} to={backLinkRef.current}>
@@ -56,7 +48,7 @@ export default function MovieDetailsPage () {
               <img
                 className={css.image}
                 src={getImg(movieData.poster_path)}
-                width="300"
+                width="200"
                 alt={movieData.title}
               />
               <div className={css.info}>
@@ -108,3 +100,5 @@ export default function MovieDetailsPage () {
     </div>
   );
 };
+
+export default MovieDetailsPage;
