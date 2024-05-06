@@ -10,4 +10,3 @@ export const formatDate = date => {
   return new Date(date).toLocaleDateString('en-US', options);
 };
 
-console.log(getImg,formatDate);

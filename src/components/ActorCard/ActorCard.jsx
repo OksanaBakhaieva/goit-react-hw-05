@@ -1,7 +1,7 @@
 import { getImg } from '../../getInfo';
 import css from './ActorCard.module.css';
 
-export const ActorCard = ({ actor }) => {
+const ActorCard = ({ actor }) => {
   return (
     <div className={css.actorCard}>
       <div>
@@ -27,3 +27,4 @@ export const ActorCard = ({ actor }) => {
   );
 };
 
+export default ActorCard;

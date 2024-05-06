@@ -6,6 +6,11 @@ import { getImg } from '../../getInfo';
 import css from './MovieDetailsPage.module.css';
 import Loader from '../../components/Loader/Loader';
 
+const getNavLinkClassNames = ({ isActive }) =>
+  clsx(css.addItems, {
+    [css.active]: isActive,
+  });
+
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movieData, setMovieData] = useState([]);
@@ -17,6 +22,7 @@ const MovieDetailsPage = () => {
   useEffect(() => {
     async function fetchMoviesById() {
       try {
+        setIsError(null);
         setIsLoading(true);
         const data = await apiMoviesById(movieId);
         setMovieData(data);
@@ -63,7 +69,6 @@ const MovieDetailsPage = () => {
 
                 <span>
                   <h2>Genres:</h2>
-
                   {movieData.genres && (
                     <p className={css.genres}>
                       {movieData.genres.map(genre => {
@@ -96,7 +101,7 @@ const MovieDetailsPage = () => {
           </div>
         ) : (
           <p className={css.infoMessage}>Sorry, there are no movies to display...</p>
-        ))}
+      ))}
     </div>
   );
 };

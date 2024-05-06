@@ -1,5 +1,19 @@
-.title {
-  margin: 24px;
+a {
+  color: blue;
+}
+a:hover {
+  color: rgb(95, 95, 95);
+}
+
+.moviesContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: baseline;
+  text-align: start;
+
+  margin-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .list {

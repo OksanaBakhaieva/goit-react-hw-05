@@ -5,6 +5,8 @@ import { apiMoviesByQuery } from "../../movies-api";
 import css from './MoviesPage.module.css';
 import Loader from '../../components/Loader/Loader';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import { noquery } from "../../services/toaster";
+
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -26,6 +28,7 @@ const MoviesPage = () => {
         }
         setMovies(data.results);
       } catch (err) {
+        noquery();
         setIsError(err);
       } finally {
         setIsLoading(false);
@@ -42,8 +45,9 @@ const MoviesPage = () => {
   };
 
   return (
-    <div>
-      <h2 className={css.title}>Movies Page</h2>
+    <>
+      <div className="css.moviesContainer">
+        
       <SearchBar
         searchQuery={searchQuery}
         onSetSearchQuery={onSetSearchQuery}
@@ -51,12 +55,16 @@ const MoviesPage = () => {
       {isError && <div>Something went wrong! Please reload this page.</div>}
       {isLoading && <Loader />}
 
-      {!isError && !isLoading && movies.length > 0 && (
+        {!isError && !isLoading && movies.length > 0 && (
+          
         <div className={css.list}>
           <MovieList movies={movies} />
         </div>
+        
       )}
     </div>
+    </>
+    
   );
 }
 
